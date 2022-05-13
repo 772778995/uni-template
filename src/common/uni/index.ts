@@ -5,9 +5,9 @@ import _ from 'lodash'
  * https://uniapp.dcloud.io/api/ui/prompt?id=showtoast
  */
 export const showToast = (opts: UniApp.ShowToastOptions | string) => {
-	if (_.isString(opts)) opts = { title: opts }
-	uni.showToast(Object.assign({ icon: 'none' }, opts))
-	return false
+  if (_.isString(opts)) opts = { title: opts }
+  uni.showToast(Object.assign({ icon: 'none' }, opts))
+  return false
 }
 
 /**
@@ -21,9 +21,9 @@ export const hideToast = uni.hideToast
  * https://uniapp.dcloud.io/api/ui/prompt?id=showloading
  */
 export const showLoading = (opts: UniApp.ShowLoadingOptions | string) => {
-	if (_.isString(opts)) opts = { title: opts, mask: true }
-	uni.showLoading(opts)
-	return false
+  if (_.isString(opts)) opts = { title: opts, mask: true }
+  uni.showLoading(opts)
+  return false
 }
 
 /**
@@ -37,16 +37,16 @@ export const hideLoading = uni.hideLoading
  * http://uniapp.dcloud.io/api/ui/prompt?id=showmodal
  */
 export const showModal = (opts: UniApp.ShowModalOptions | string) => {
-	if (_.isString(opts)) opts = { content: opts }
-	return new Promise((resolve, reject) =>
-		uni.showModal({
-			success: res => {
-				if (res.confirm) return resolve(res?.content)
-				reject(res)
-			},
-			...(opts as UniApp.ShowModalOptions)
-		})
-	)
+  if (_.isString(opts)) opts = { title: '提示', content: opts }
+  return new Promise((resolve, reject) =>
+    uni.showModal({
+      success: (res) => {
+        if (res.confirm) return resolve(res?.content)
+        reject(res)
+      },
+      ...(opts as UniApp.ShowModalOptions)
+    })
+  )
 }
 
 /**
@@ -54,9 +54,9 @@ export const showModal = (opts: UniApp.ShowModalOptions | string) => {
  * https://uniapp.dcloud.io/api/ui/scroll.html
  */
 export const pageScrollTo = (opts: UniApp.PageScrollToOptions | string | number) => {
-	if (_.isString(opts)) opts = { selector: opts }
-	if (_.isNumber(opts)) opts = { scrollTop: opts }
-	return uni.pageScrollTo(opts) as unknown as Promise<unknown>
+  if (_.isString(opts)) opts = { selector: opts }
+  if (_.isNumber(opts)) opts = { scrollTop: opts }
+  return uni.pageScrollTo(opts) as unknown as Promise<unknown>
 }
 
 /**
@@ -65,21 +65,21 @@ export const pageScrollTo = (opts: UniApp.PageScrollToOptions | string | number)
  * https://uniapp.dcloud.io/api/ui/menuButton.html#getmenubuttonboundingclientrect
  */
 export const getMenuButtonBoundingClientRect = () => {
-	let res: UniApp.GetMenuButtonBoundingClientRectRes
-	/* #ifdef MP-WEIXIN */
-	res = uni.getMenuButtonBoundingClientRect()
-	/* #endif */
-	// #ifndef MP-WEIXIN
-	res = {
-		bottom: 80,
-		top: 10,
-		left: 200,
-		right: 20,
-		height: 80,
-		width: 100
-	}
-	// #endif
-	return res
+  let res: UniApp.GetMenuButtonBoundingClientRectRes
+  /* #ifdef MP-WEIXIN */
+  res = uni.getMenuButtonBoundingClientRect()
+  /* #endif */
+  // #ifndef MP-WEIXIN
+  res = {
+    bottom: 80,
+    top: 10,
+    left: 200,
+    right: 20,
+    height: 80,
+    width: 100
+  }
+  // #endif
+  return res
 }
 
 //—————————————————————————————————路由与页面跳转—————————————————————————————————————
@@ -88,9 +88,9 @@ export const getMenuButtonBoundingClientRect = () => {
  * https://uniapp.dcloud.io/api/router?id=navigateto
  */
 export const navigateTo = (opts: UniApp.NavigateToOptions | string) => {
-	if (_.isString(opts)) opts = { url: opts }
-	uni.navigateTo(opts)
-	return false
+  if (_.isString(opts)) opts = { url: opts }
+  uni.navigateTo(opts)
+  return false
 }
 
 /**
@@ -98,46 +98,46 @@ export const navigateTo = (opts: UniApp.NavigateToOptions | string) => {
  * https://uniapp.dcloud.io/api/router?id=redirectto
  */
 export const redirectTo = (opts: UniApp.RedirectToOptions | string) => {
-	if (_.isString(opts)) opts = { url: opts }
-	uni.redirectTo(opts)
-	return false
+  if (_.isString(opts)) opts = { url: opts }
+  uni.redirectTo(opts)
+  return false
 }
 /**
  * 关闭所有页面，打开到应用内的某个页面。
  * https://uniapp.dcloud.io/api/router?id=relaunch
  */
 export const reLaunch = (opts: UniApp.ReLaunchOptions | string) => {
-	if (_.isString(opts)) opts = { url: opts }
-	uni.reLaunch(opts)
-	return false
+  if (_.isString(opts)) opts = { url: opts }
+  uni.reLaunch(opts)
+  return false
 }
 /**
  * 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面。
  * https://uniapp.dcloud.io/api/router?id=switchtab
  */
 export const switchTab = (opts: UniApp.SwitchTabOptions | string) => {
-	if (_.isString(opts)) opts = { url: opts }
-	uni.switchTab(opts)
-	return false
+  if (_.isString(opts)) opts = { url: opts }
+  uni.switchTab(opts)
+  return false
 }
 /**
  * 关闭当前页面，返回上一页面或多级页面。可通过 getCurrentPages() 获取当前的页面栈，决定需要返回几层。
  * https://uniapp.dcloud.io/api/router?id=navigateback
  */
 export const navigateBack = (opts?: UniApp.NavigateBackOptions | number) => {
-	if (!opts) opts = {}
-	if (_.isNumber(opts)) opts = { delta: opts }
-	uni.navigateBack(opts)
-	return false
+  if (!opts) opts = {}
+  if (_.isNumber(opts)) opts = { delta: opts }
+  uni.navigateBack(opts)
+  return false
 }
 /**
  * 预加载页面，是一种性能优化技术。被预载的页面，在打开时速度更快。
  * https://uniapp.dcloud.io/api/preload-page
  */
 export const preloadPage = (opts: UniApp.PreloadPageOptions | string) => {
-	if (_.isString(opts)) opts = { url: opts }
-	uni.preloadPage(opts)
-	return false
+  if (_.isString(opts)) opts = { url: opts }
+  uni.preloadPage(opts)
+  return false
 }
 
 //—————————————————————————————————数据缓存—————————————————————————————————————
@@ -170,7 +170,7 @@ export const getStorageSync = (key: string) => uni.getStorageSync(key)
  * https://uniapp.dcloud.io/api/storage/storage?id=getstorageinfo
  */
 export const getStorageInfo = uni.getStorageInfo as {
-	(opts: UniApp.GetStorageInfoOptions): Promise<unknown>
+  (opts: UniApp.GetStorageInfoOptions): Promise<unknown>
 }
 
 /**
@@ -209,8 +209,8 @@ export const clearStorageSync = uni.clearStorageSync
  * https://uniapp.dcloud.io/api/location/location
  */
 export const getLocation = (opts: UniApp.GetLocationOptions = {}) => {
-	opts = Object.assign({ type: 'gcj02', isHighAccuracy: true }, opts)
-	return uni.getLocation(opts) as unknown as Promise<UniApp.GetLocationSuccess>
+  opts = Object.assign({ type: 'gcj02', isHighAccuracy: true }, opts)
+  return uni.getLocation(opts) as unknown as Promise<UniApp.GetLocationSuccess>
 }
 
 /**
@@ -218,7 +218,7 @@ export const getLocation = (opts: UniApp.GetLocationOptions = {}) => {
  * https://uniapp.dcloud.io/api/location/location?id=chooselocation
  */
 export const chooseLocation = uni.chooseLocation as {
-	(opts: UniApp.ChooseLocationOptions): Promise<UniApp.ChooseLocationSuccess>
+  (opts: UniApp.ChooseLocationOptions): Promise<UniApp.ChooseLocationSuccess>
 }
 
 /**
@@ -226,7 +226,7 @@ export const chooseLocation = uni.chooseLocation as {
  * https://uniapp.dcloud.io/api/location/open-location
  */
 export const openLocation = uni.openLocation as {
-	(opts: UniApp.OpenLocationOptions): Promise<unknown>
+  (opts: UniApp.OpenLocationOptions): Promise<unknown>
 }
 
 //—————————————————————————————————媒体—————————————————————————————————————
@@ -241,16 +241,16 @@ export const createMapContext = uni.createMapContext
  * https://uniapp.dcloud.io/api/media/image?id=chooseimage
  */
 export const chooseImage = (
-	opts: UniApp.ChooseImageOptions = {
-		count: 1
-	}
+  opts: UniApp.ChooseImageOptions = {
+    count: 1
+  }
 ) => uni.chooseImage(opts) as unknown as Promise<UniApp.ChooseImageSuccessCallbackResult>
 /**
  * 从本地选择文件。仅 H5 平台有效
  * https://uniapp.dcloud.io/api/media/file.html
  */
 export const chooseFileH5 = uni.chooseFile as {
-	(opts: UniApp.ChooseFileOptions): Promise<UniApp.ChooseFileSuccessCallbackResult>
+  (opts: UniApp.ChooseFileOptions): Promise<UniApp.ChooseFileSuccessCallbackResult>
 }
 
 // —————————————————————————————————设备—————————————————————————————————————
@@ -259,7 +259,7 @@ export const chooseFileH5 = uni.chooseFile as {
  * https://uniapp.dcloud.io/api/system/info.html#getsysteminfo
  */
 export const getSystemInfo = (opts: UniApp.GetSystemInfoOptions = {}) =>
-	uni.getSystemInfo(opts) as unknown as Promise<UniApp.GetSystemInfoResult>
+  uni.getSystemInfo(opts) as unknown as Promise<UniApp.GetSystemInfoResult>
 
 /**
  * 获取系统信息同步接口。
@@ -272,9 +272,9 @@ export const getSystemInfoSync = uni.getSystemInfoSync
  * https://uniapp.dcloud.io/api/system/barcode.html#scancode
  */
 export const scanCode = (
-	opts: UniApp.ScanCodeOptions = {
-		scanType: ['qrCode']
-	}
+  opts: UniApp.ScanCodeOptions = {
+    scanType: ['qrCode']
+  }
 ) => uni.scanCode(opts) as unknown as Promise<UniApp.ScanCodeSuccessRes>
 
 /**
@@ -304,29 +304,29 @@ export const login = (opts: UniApp.LoginOptions = {}) => uni.login(opts) as unkn
 export const getRecorderManger = uni.getRecorderManager
 
 type ScopeWX =
-	| 'userInfo'
-	| 'userLocation'
-	| 'userLocationBackground'
-	| 'address'
-	| 'record'
-	| 'writePhotosAlbum'
-	| 'camera'
-	| 'invoice'
-	| 'invoiceTitle'
-	| 'werun'
+  | 'userInfo'
+  | 'userLocation'
+  | 'userLocationBackground'
+  | 'address'
+  | 'record'
+  | 'writePhotosAlbum'
+  | 'camera'
+  | 'invoice'
+  | 'invoiceTitle'
+  | 'werun'
 /**
  * 提前向用户发起授权请求。
  * https://uniapp.dcloud.io/api/other/authorize.html#authorize
  */
 export const authorizeWX = (scope: ScopeWX) => {
-	let res: Promise<unknown>
-	// #ifdef MP-WEIXIN
-	res = uni.authorize({ scope: 'scope.' + scope }) as unknown as Promise<unknown>
-	// #endif
-	// #ifndef MP-WEIXIN
-	res = new Promise(resolve => resolve())
-	// #endif
-	return res
+  let res: Promise<unknown>
+  // #ifdef MP-WEIXIN
+  res = uni.authorize({ scope: 'scope.' + scope }) as unknown as Promise<unknown>
+  // #endif
+  // #ifndef MP-WEIXIN
+  res = new Promise((resolve) => resolve())
+  // #endif
+  return res
 }
 
 /**
@@ -334,4 +334,4 @@ export const authorizeWX = (scope: ScopeWX) => {
  * https://uniapp.dcloud.io/api/plugins/login.html#uni-checksession
  */
 export const checkSession = (opts: UniApp.CheckSessionOptions = {}) =>
-	uni.checkSession(opts) as unknown as Promise<unknown>
+  uni.checkSession(opts) as unknown as Promise<unknown>
