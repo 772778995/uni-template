@@ -3,6 +3,7 @@ import $_ from 'lodash'
 import * as $uni from './uni'
 import $day from './day'
 import * as $util from './util'
+import './uni/interceptor'
 
 export default {
   install(app) {
