@@ -1,0 +1,191 @@
+{
+  "#ifdef": {
+    "body": [
+      "<!-- #ifdef ${1|APP-PLUS,MP,MP-ALIPAY,MP-BAIDU,MP-WEIXIN,MP-QQ,H5|} -->",
+      "$0",
+      "<!-- #endif -->"
+    ],
+    "prefix": "ifdef",
+    "scope": "html"
+  },
+  "#ifndef": {
+    "body": [
+      "<!-- #ifndef ${1|APP-PLUS,MP,MP-ALIPAY,MP-BAIDU,MP-WEIXIN,MP-QQ,H5|} -->",
+      "$0",
+      "<!-- #endif -->"
+    ],
+    "prefix": "ifndef",
+    "scope": "html"
+  },
+  "Vue Base": {
+    "body": [
+      "<script lang=\"ts\" setup>",
+      "</script>",
+      "",
+      "<template>",
+      "\t<Root>",
+      "\t\t<Navbar title=\"${0}\"/>",
+      "\t</Root>",
+      "</template>"
+    ],
+    "description": "Vue 模板",
+    "prefix": "vue",
+    "scope": "vue"
+  },
+  "view": {
+    "body": [
+      "<view>${0}</view>"
+    ],
+    "prefix": "vv",
+    "scope": "html"
+  },
+  "view class": {
+    "body": [
+      "<view class=\"${1}\">${0}</view>"
+    ],
+    "prefix": "vc",
+    "scope": "html"
+  },
+  "cover view": {
+    "body": "<cover-view>${0}</cover-view>",
+    "prefix": "cv",
+    "scope": "html"
+  },
+  "cover view class": {
+    "body": "<cover-view class=\"${1}\">${0}</cover-view>",
+    "prefix": "cvc",
+    "scope": "html"
+  },
+  "text": {
+    "body": [
+      "<text>${0}</text>"
+    ],
+    "prefix": "tt",
+    "scope": "html"
+  },
+  "text class": {
+    "body": [
+      "<text class=\"${1}\">${0}</text>"
+    ],
+    "prefix": "tc",
+    "scope": "html"
+  },
+  "Vue Image Source Binding": {
+    "body": [
+      "<image :src=\"${0}\" />"
+    ],
+    "prefix": "image",
+    "scope": "html"
+  },
+  "Vue v-for": {
+    "body": [
+      "<view v-for=\"item in ${1}\" :key=\"item\">",
+      "\t${0}",
+      "</view>"
+    ],
+    "prefix": "vf",
+    "scope": "html"
+  },
+  "navigator": {
+    "body": [
+      "<navigator url=\"$1\">$0</navigator>"
+    ],
+    "prefix": "navigator",
+    "scope": "html"
+  },
+  "checkbox": {
+    "body": [
+      "<label class=\"checkbox\">",
+      "\t<checkbox value=\"$1\" checked= />$0",
+      "</label>"
+    ],
+    "prefix": "checkbox",
+    "scope": "html"
+  },
+  "audio": {
+    "body": [
+      "<audio :src=\"$1\" :poster=\"$0\" :name=\"$2\" :author=\"$3\" :action=\"$4\" controls></audio>"
+    ],
+    "prefix": "audio",
+    "scope": "html"
+  },
+  "map": {
+    "body": [
+      "<map :latitude=\"$1\" :longitude=\"$0\"></map>"
+    ],
+    "prefix": "map",
+    "scope": "html"
+  },
+  "editor": {
+    "body": [
+      "<editor placeholder=\"$1\"></editor>"
+    ],
+    "prefix": "editor",
+    "scope": "html"
+  },
+  "picker": {
+    "body": [
+      "<picker mode=\"$1\" :range=\"$2\" @change=\"$3\">",
+      "\t<view>picker组件</view>",
+      "</picker>"
+    ],
+    "prefix": "picker",
+    "scope": "html"
+  },
+  "progress": {
+    "body": [
+      " <progress percent=\"$1\" show-info$0 />"
+    ],
+    "prefix": "progress",
+    "scope": "html"
+  },
+  "radio": {
+    "body": [
+      "<label class=\"radio\">",
+      "\t<radio value=\"$1\" checked= />$0",
+      "</label>"
+    ],
+    "prefix": "u-radio",
+    "scope": "html"
+  },
+  "scroll": {
+    "body": [
+      "<scroll-view scroll-y$1>",
+      "\t<view>$0</view>",
+      "\t<view></view>",
+      "\t<view></view>",
+      "\t<view></view>",
+      "</scroll-view>"
+    ],
+    "prefix": "scroll-view",
+    "scope": "html"
+  },
+  "video": {
+    "body": [
+      "<video src=\"$0\" controls></video>"
+    ],
+    "prefix": "video",
+    "scope": "html"
+  },
+  "button": {
+    "body": [
+      "<button class=\"${1}\">$0</button>"
+    ],
+    "prefix": "bc",
+    "scope": "html"
+  },
+  "input": {
+    "body": [
+      "<input class=\"${0}\" />"
+    ],
+    "prefix": "input",
+    "scope": "html"
+  },
+  "textarea": {
+    "body": [
+      "<textarea class=\"${0}\" />"
+    ],
+    "prefix": "textarea",
+    "scope": "html"
+  },
+}
