@@ -4,6 +4,7 @@ import * as $uni from './uni'
 import $day from './day'
 import * as $util from './util'
 import './uni/interceptor'
+import userInfoStore from '@/store/userInfo'
 
 export default {
   install(app) {
@@ -11,7 +12,10 @@ export default {
       $_,
       $uni,
       $day,
-      $util
+      $util,
+      $store: {
+        userInfo: userInfoStore
+      }
     })
   }
 } as Plugin
