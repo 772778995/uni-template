@@ -1,9 +1,6 @@
 import { defineConfig } from 'windicss/helpers'
+import whcPreset from 'whc-windicss'
 
 export default defineConfig({
-  darkMode: 'class',
-  safelist: 'p-3 p-4 p-5',
-  theme: {
-    extend: {}
-  }
+  presets: [whcPreset()]
 })

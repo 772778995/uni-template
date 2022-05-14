@@ -912,7 +912,7 @@
     "@vue/compiler-dom" "3.2.33"
     "@vue/shared" "3.2.33"
 
-"@vue/devtools-api@^6.0.0", "@vue/devtools-api@^6.0.0-beta.7":
+"@vue/devtools-api@^6.0.0", "@vue/devtools-api@^6.0.0-beta.7", "@vue/devtools-api@^6.1.4":
   version "6.1.4"
   resolved "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.1.4.tgz"
   integrity sha512-IiA0SvDrJEgXvVxjNkHPFfDx6SXw0b/TUkqMcDZWNg9fnCAHbTpoo59YfJ9QLFkwa3raau5vSlRVzMSLDnfdtQ==
@@ -1989,6 +1989,14 @@ pify@^2.3.0:
   resolved "https://registry.npmjs.org/pify/-/pify-2.3.0.tgz"
   integrity sha1-7RQaasBDqEnqWISY59yosVMw6Qw=
 
+pinia@^2.0.14:
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.0.14.tgz#0837898c20291ebac982bbfca95c8d3c6099925f"
+  integrity sha512-0nPuZR4TetT/WcLN+feMSjWJku3SQU7dBbXC6uw+R6FLQJCsg+/0pzXyD82T1FmAYe0lsx+jnEDQ1BLgkRKlxA==
+  dependencies:
+    "@vue/devtools-api" "^6.1.4"
+    vue-demi "*"
+
 postcss-import@^14.0.2:
   version "14.1.0"
   resolved "https://registry.npmjs.org/postcss-import/-/postcss-import-14.1.0.tgz"
@@ -2386,6 +2394,11 @@ vite@^2.9.6:
   optionalDependencies:
     fsevents "~2.3.2"
 
+vue-demi@*:
+  version "0.12.5"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.12.5.tgz#8eeed566a7d86eb090209a11723f887d28aeb2d1"
+  integrity sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==
+
 vue-i18n@^9.1.9:
   version "9.1.10"
   resolved "https://registry.npmjs.org/vue-i18n/-/vue-i18n-9.1.10.tgz"
@@ -2414,6 +2427,14 @@ vue@^3.2.33:
     "@vue/server-renderer" "3.2.33"
     "@vue/shared" "3.2.33"
 
+whc-windicss@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/whc-windicss/-/whc-windicss-0.3.4.tgz#de41c7cc3ce07ea021b25348f4ac58d42ba26cfb"
+  integrity sha512-FeDRQZRDiQ0tB4BLeXPHhN2O2wJDZ8bMWLEsmES25nO2FtaGuCzCHbRGPkXqs0y/w4VOiac21zI1Ra+ed7g3Bw==
+  dependencies:
+    lodash "^4.17.21"
+    windicss "^3.4.4"
+
 which@^2.0.1:
   version "2.0.2"
   resolved "https://registry.npmjs.org/which/-/which-2.0.2.tgz"
@@ -2421,7 +2442,7 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-windicss@^3.5.1, windicss@^3.5.3:
+windicss@^3.4.4, windicss@^3.5.1, windicss@^3.5.3:
   version "3.5.3"
   resolved "https://registry.npmjs.org/windicss/-/windicss-3.5.3.tgz"
   integrity sha512-Zsb38RscfZJa218GUREJyFu6EF1xD5DZ+b0XL1Kac3BGDtYwVmXJMmOahMK4mZSEy3gWO8aqUQMny0nbJFG6yA==
