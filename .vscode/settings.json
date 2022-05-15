@@ -1,12 +1,32 @@
 {
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"files.associations": {
+		"*.json": "jsonc"
+	},
 	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[vue]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 
+	"windicss.sortOnSave": true,
+	"windicss.enableRemToPxPreview": false,
+	"windicss.enableBracketCompletion": false,
+	"windicss.enableDynamicCompletion": true,
+	"windicss.enableAttrVariantCompletion": false,
+	"windicss.enableAttrUtilityCompletion": false,
 	"css.lint.unknownAtRules": "ignore",
+	"less.lint.unknownAtRules": "ignore",
+	"scss.lint.unknownAtRules": "ignore",
 
 	"i18n-ally.localesPaths": ["src/common/i18n/langs"],
 	"i18n-ally.enabledFrameworks": ["vue"],
