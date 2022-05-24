@@ -28,9 +28,10 @@
 	"less.lint.unknownAtRules": "ignore",
 	"scss.lint.unknownAtRules": "ignore",
 
-	"i18n-ally.localesPaths": ["src/common/i18n/langs"],
+	"i18n-ally.localesPaths": ["src/common/i18n/locales"],
 	"i18n-ally.enabledFrameworks": ["vue"],
-	"i18n-ally.enabledParsers": ["ts"],
+	"i18n-ally.enabledParsers": ["json"],
 	"i18n-ally.sourceLanguage": "zh-CN",
-	"i18n-ally.displayLanguage": "zh-CN"
+	"i18n-ally.displayLanguage": "zh-CN",
+	"i18n-ally.keystyle": "flat"
 }
