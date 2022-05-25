@@ -4,6 +4,8 @@
 		"esbenp.prettier-vscode",
 		"voorjaar.windicss-intellisense",
 		"modyqyw.vscode-uni-app-schemas",
-		"evils.uniapp-vscode"
+		"modyqyw.vscode-uni-app-snippets",
+		"evils.uniapp-vscode",
+		"lokalise.i18n-ally"
 	]
 }
