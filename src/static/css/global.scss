@@ -1,0 +1,7 @@
+/* #ifdef MP-WEIXIN */
+@import './mp-weixin/normal.scss';
+/* #endif */
+
+page {
+	@apply h-full;
+}
